@@ -126,12 +126,30 @@ footer {
     transform: scale(1.1);
     background: #1ebe5d;
 }
+    /* NAVBAR LAYOUT FIX */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: black;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+    font-weight: 600;
+    color: gold;
+}
 </style>
 </head>
 
 <body>
 
-<div class="navbar">
+<!-- <div class="navbar">
     <div class="nav-buttons">
         <button class="active" onclick="showTab(event,'ruqya')">Ruqya</button>
         <button onclick="showTab(event,'academy')">Academy</button>
@@ -142,14 +160,30 @@ footer {
         <button onclick="setLang('ur')">UR</button>
         <button onclick="setLang('ar')">AR</button>
     </div>
+</div> -->
+    <div class="navbar">
+    
+    <div class="nav-buttons">
+        <button class="active" onclick="showTab(event,'ruqya')">Ruqya</button>
+        <button onclick="showTab(event,'academy')">Academy</button>
+    </div>
+
+    <div class="logo">RuqyaTech</div>
+
+    <div class="lang-switch">
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('ur')">UR</button>
+        <button onclick="setLang('ar')">AR</button>
+    </div>
+
 </div>
 
 <!-- RUQYA -->
 <div id="ruqya" class="section active-section">
 
     <div class="hero">
-        <h1>RUQYATECH®</h1>
-    </div>
+    <h1>Ruqya Services in Islamabad</h1>
+</div>
 
     <div class="container">
 
@@ -206,8 +240,8 @@ footer {
 <div id="academy" class="section">
 
     <div class="hero">
-        <h1>QURAN ACADEMY</h1>
-    </div>
+    <h1>RuqyaTech Quran Academy</h1>
+</div>
 
     <div class="container">
 
