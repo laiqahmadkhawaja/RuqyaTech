@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&family=Amiri:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Noto+Kufi+Arabic:wght@400;700&display=swap');
 
 :root {
     --primary: #064e3b;
@@ -22,7 +22,8 @@ body.light-theme {
     --bg-card: rgba(255, 255, 255, 0.9);
     --text-white: #0f172a;
     --text-muted: #475569;
-    --accent: #b48a00; /* Darker gold for light theme */
+    --accent: #b48a00;
+    /* Darker gold for light theme */
     --accent-hover: #947100;
     --glass-bg: rgba(0, 0, 0, 0.05);
     --glass-border: rgba(0, 0, 0, 0.1);
@@ -33,33 +34,41 @@ body.light-theme {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-dark);
     color: var(--text-white);
-    line-height: 1.7;
-    font-size: 1.05rem;
-    font-weight: 400;
+    line-height: 1.6;
     overflow-x: hidden;
+    transition: var(--transition);
 }
 
-h1, h2, h3, .logo {
-    font-family: 'Outfit', sans-serif;
+/* Language Specific Fonts */
+[lang="ur"], [lang="ur"] :not(span) {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    line-height: 2.2;
 }
 
-.urdu-text {
-    font-family: 'Amiri', serif;
-    direction: rtl;
-    font-size: 1.25rem;
+[lang="ar"], [lang="ar"] :not(span) {
+    font-family: 'Noto Kufi Arabic', sans-serif;
     line-height: 1.8;
 }
 
-[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4 {
-    line-height: 1.6;
-    margin-bottom: 20px;
+/* Ensure icons/spans use natural font for centering emojis */
+.card h3 span {
+    font-family: Arial, sans-serif !important;
 }
+
+h1, h2, h3, h4, .logo {
+    font-family: 'Outfit', sans-serif;
+    text-align: center; /* Always centered */
+}
+
+
+
 
 /* NAVBAR */
 .navbar {
@@ -98,7 +107,8 @@ h1, h2, h3, .logo {
 
 .nav-buttons button.active {
     background: var(--accent);
-    color: #000 !important; /* Force readable text on gold */
+    color: #000 !important;
+    /* Force readable text on gold */
     opacity: 1;
     box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
@@ -199,20 +209,24 @@ h1, h2, h3, .logo {
     max-width: 900px;
 }
 
-.hero h1 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    color: var(--accent);
-    margin-bottom: 20px;
-    line-height: 1.1;
+.hero-content h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 700;
+    margin-bottom: 40px; /* Increased from 20px */
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1s ease-out;
 }
 
 .tagline {
-    font-size: 1.3rem;
-    color: #f8fafc; /* Force white for hero */
-    max-width: 700px;
-    margin: 0 auto;
+    font-size: 1.5rem; /* Increased from 1.3rem */
+    color: #f8fafc;
+    /* Force white for hero */
+    max-width: 850px;
+    margin: 20px auto 0 auto;
     font-weight: 300;
-    opacity: 0.9;
+    line-height: 1.8;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.2s ease-out;
 }
 
 /* CONTAINER */
@@ -233,8 +247,15 @@ h1, h2, h3, .logo {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* GRID LAYOUT */
@@ -263,24 +284,47 @@ h1, h2, h3, .logo {
     text-align: right;
 }
 
-[dir="rtl"] .card p {
-    text-align: right;
-    text-align-last: right;
+[dir="rtl"] .card h3, [dir="rtl"] .card h4 {
+    text-align: center;
     direction: rtl;
 }
 
-[dir="rtl"] .card a, [dir="rtl"] .card .number {
-    direction: ltr;
-    display: inline-block;
-}
-
-[dir="rtl"] .card h3 {
-    align-items: center; /* Keep icon seal centered */
-}
-
-[dir="rtl"] .card ul {
+[dir="rtl"] .card p, [dir="rtl"] .card ul {
     text-align: right;
+    direction: rtl;
 }
+
+/* Fix list item alignment in RTL: Icon should be at the "start" (right) of the text */
+[dir="rtl"] .card ul li {
+    display: flex;
+    flex-direction: row; /* Let RTL direction handle the swap */
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+/* Contact Card is the only exception: Forced Center/LTR */
+.contact-card, .contact-card * {
+    direction: ltr !important;
+    text-align: center !important;
+}
+
+.contact-card ul li {
+    justify-content: center !important;
+}
+
+.contact-card h3, .contact-card h4 {
+    direction: rtl !important; /* Title remains translated direction */
+}
+
+/* Global LTR overrides for numbers/links to prevent reversal */
+.number, [href^="tel:"], [href^="https://wa.me/"] {
+    direction: ltr !important;
+    unicode-bidi: isolate;
+}
+
+
 
 
 .card:hover {
@@ -326,9 +370,10 @@ h1, h2, h3, .logo {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    margin: 10px auto 20px auto; /* Increased top and bottom margin */
+    margin: 10px auto 20px auto;
+    /* Increased top and bottom margin */
     border: 2px solid var(--accent);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     flex-shrink: 0;
 }
 
@@ -441,7 +486,7 @@ footer {
         gap: 15px;
         padding: 15px;
     }
-    
+
     .logo {
         order: -1;
     }
@@ -449,7 +494,7 @@ footer {
     .hero-content h1 {
         font-size: 2.5rem;
     }
-    
+
     .grid {
         grid-template-columns: 1fr;
     }
