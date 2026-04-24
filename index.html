@@ -32,39 +32,26 @@ body {
     color: white;
     cursor: pointer;
     border-radius: 20px;
+    transition: 0.3s;
 }
 
-button.active {
+.nav-buttons button.active {
     background: gold;
     color: black;
 }
 
-/* HERO */
+/* HERO (PATTERN) */
 .hero {
-    height: 90vh;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-#ruqyaHero {
-    background-image: url("ruqya-poster.jpg"); /* CHANGE HERE */
-}
-
-#academyHero {
-    background-image: url("academy-poster.png"); /* CHANGE HERE */
-}
-
-.overlay {
-    background: rgba(0,0,0,0.75);
-    height: 100%;
+    height: 70vh;
+    background: url("https://www.transparenttextures.com/patterns/arabesque.png"), 
+                linear-gradient(to bottom, #020617, #000);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
-.overlay h1 {
+.hero h1 {
     font-size: 3rem;
     color: gold;
 }
@@ -91,7 +78,7 @@ button.active {
     margin: 20px 0;
     opacity: 0;
     transform: translateY(40px);
-    transition: 0.6s ease;
+    transition: 0.6s;
 }
 
 .card.show {
@@ -103,14 +90,14 @@ button.active {
     color: gold;
 }
 
-/* CONTACT BUTTON */
-.whatsapp-btn {
-    display: inline-block;
-    padding: 12px 20px;
-    background: #25D366;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
+/* POSTER */
+.poster {
+    margin-top: 30px;
+}
+
+.poster img {
+    width: 100%;
+    border-radius: 15px;
 }
 
 /* FOOTER */
@@ -126,8 +113,8 @@ footer {
 
 <div class="navbar">
     <div class="nav-buttons">
-        <button class="active" onclick="showTab('ruqya')">Ruqya</button>
-        <button onclick="showTab('academy')">Academy</button>
+        <button class="active" onclick="showTab(event,'ruqya')">Ruqya</button>
+        <button onclick="showTab(event,'academy')">Academy</button>
     </div>
 
     <div class="lang-switch">
@@ -139,67 +126,109 @@ footer {
 
 <!-- RUQYA -->
 <div id="ruqya" class="section active-section">
-    <div id="ruqyaHero" class="hero">
-        <div class="overlay">
-            <h1 data-en="Healing Through Quran & Sunnah"
-                data-ur="قرآن و سنت کے ذریعے شفا"
-                data-ar="الشفاء بالقرآن والسنة">
-                Healing Through Quran & Sunnah
-            </h1>
-        </div>
+
+    <div class="hero">
+        <h1>RUQYATECH®</h1>
     </div>
 
     <div class="container">
 
         <div class="card">
-            <p data-en="Authentic Ruqya services based on Qur’an & Sunnah."
-               data-ur="قرآن و سنت پر مبنی مستند رقیہ خدمات"
-               data-ar="خدمات رقية شرعية وفق القرآن والسنة">
-               Authentic Ruqya services based on Qur’an & Sunnah.
+            <p data-en="Authentic Ruqya services based on Qur’an & Sunnah with strict confidentiality."
+               data-ur="قرآن و سنت پر مبنی مستند رقیہ خدمات مکمل رازداری کے ساتھ"
+               data-ar="خدمات رقية شرعية وفق القرآن والسنة مع السرية التامة">
+               Authentic Ruqya services based on Qur’an & Sunnah with strict confidentiality.
             </p>
         </div>
 
         <div class="card">
-            <h3>Treatments</h3>
+            <h3>Conditions We Treat</h3>
             <ul>
                 <li>Evil Eye</li>
-                <li>Black Magic</li>
-                <li>Envy</li>
-                <li>Anxiety</li>
+                <li>Black Magic (Sihr)</li>
+                <li>Anxiety & Stress</li>
+                <li>Insomnia</li>
+                <li>Chronic Pain</li>
             </ul>
         </div>
 
-        <a class="whatsapp-btn" href="https://wa.me/923458556748">WhatsApp</a>
+        <div class="card">
+            <h3>Our Approach</h3>
+            <p>We identify root causes and guide complete healing through Islamic methods.</p>
+        </div>
+
+        <div class="card">
+            <h3>Pricing</h3>
+            <p>$30 Diagnostic Session</p>
+            <p>$40 Regular Session</p>
+        </div>
+
+        <!-- WHAT WE OFFER -->
+        <div class="card">
+            <h3>What We Offer</h3>
+            <ul>
+                <li>Online Sessions Worldwide</li>
+                <li>Quran & Sunnah Based Treatment</li>
+                <li>No Shirk Methods</li>
+                <li>Confidential Consultation</li>
+            </ul>
+        </div>
+
+        <!-- POSTER -->
+        <div class="poster">
+            <img src="ruqya-poster.jpg" alt="">
+        </div>
 
     </div>
 </div>
 
 <!-- ACADEMY -->
 <div id="academy" class="section">
-    <div id="academyHero" class="hero">
-        <div class="overlay">
-            <h1 data-en="Quran Learning Made Easy"
-                data-ur="قرآن سیکھنا اب آسان"
-                data-ar="تعلم القرآن بسهولة">
-                Quran Learning Made Easy
-            </h1>
-        </div>
+
+    <div class="hero">
+        <h1>QURAN ACADEMY</h1>
     </div>
 
     <div class="container">
+
+        <div class="card">
+            <p data-en="Empowering Sisters & Children with Quranic Knowledge Worldwide"
+               data-ur="دنیا بھر میں بہنوں اور بچوں کو قرآن کی تعلیم دینا"
+               data-ar="تمكين النساء والأطفال من تعلم القرآن عالميًا">
+               Empowering Sisters & Children with Quranic Knowledge Worldwide
+            </p>
+        </div>
 
         <div class="card">
             <h3>Courses</h3>
             <ul>
                 <li>Quran with Tajweed</li>
                 <li>Female Teachers</li>
-                <li>1-on-1 Classes</li>
+                <li>1-on-1 Sessions</li>
+                <li>Daily Duas & Adhkar</li>
             </ul>
         </div>
 
         <div class="card">
             <h3>Fees</h3>
-            <p>$35 / $30</p>
+            <p>$35 (4–13)</p>
+            <p>$30 (14+)</p>
+        </div>
+
+        <!-- WHAT WE OFFER -->
+        <div class="card">
+            <h3>What We Offer</h3>
+            <ul>
+                <li>3-Day Free Trial</li>
+                <li>Flexible Timings</li>
+                <li>Family Discounts</li>
+                <li>Islamic Learning</li>
+            </ul>
+        </div>
+
+        <!-- POSTER -->
+        <div class="poster">
+            <img src="academy-poster.png" alt="">
         </div>
 
     </div>
@@ -210,9 +239,12 @@ footer {
 <script>
 
 /* TAB SWITCH */
-function showTab(tabId) {
+function showTab(event, tabId) {
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active-section'));
     document.getElementById(tabId).classList.add('active-section');
+
+    document.querySelectorAll('.nav-buttons button').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
 }
 
 /* LANGUAGE SWITCH */
