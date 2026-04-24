@@ -18,43 +18,45 @@ body {
 /* NAVBAR */
 .navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 15px 30px;
     background: black;
-    padding: 15px;
-    gap: 20px;
 }
 
-.navbar button {
-    padding: 10px 25px;
+.nav-buttons button,
+.lang-switch button {
+    margin: 5px;
+    padding: 8px 18px;
     border: none;
     background: #1e293b;
     color: white;
     cursor: pointer;
-    border-radius: 25px;
+    border-radius: 20px;
 }
 
-.navbar button.active {
+button.active {
     background: gold;
     color: black;
 }
 
-/* SECTIONS */
-.section {
-    display: none;
-}
-.active-section {
-    display: block;
-}
-
-/* HERO IMAGE */
-.hero-image {
+/* HERO */
+.hero {
     height: 90vh;
-    background: url("poster.jpg") center/cover no-repeat;
+    background-size: cover;
+    background-position: center;
     position: relative;
 }
 
+#ruqyaHero {
+    background-image: url("ruqya-poster.jpg"); /* CHANGE HERE */
+}
+
+#academyHero {
+    background-image: url("academy-poster.jpg"); /* CHANGE HERE */
+}
+
 .overlay {
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.75);
     height: 100%;
     display: flex;
     align-items: center;
@@ -65,6 +67,14 @@ body {
 .overlay h1 {
     font-size: 3rem;
     color: gold;
+}
+
+/* SECTION */
+.section {
+    display: none;
+}
+.active-section {
+    display: block;
 }
 
 /* CONTENT */
@@ -78,7 +88,15 @@ body {
     background: #111827;
     padding: 20px;
     border-radius: 12px;
-    margin: 15px 0;
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s ease;
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .card h3 {
@@ -88,7 +106,6 @@ body {
 /* CONTACT BUTTON */
 .whatsapp-btn {
     display: inline-block;
-    margin-top: 20px;
     padding: 12px 20px;
     background: #25D366;
     color: white;
@@ -108,92 +125,113 @@ footer {
 <body>
 
 <div class="navbar">
-    <button class="active" onclick="showTab('ruqya')">Ruqya Services</button>
-    <button onclick="showTab('academy')">Quran Academy</button>
+    <div class="nav-buttons">
+        <button class="active" onclick="showTab('ruqya')">Ruqya</button>
+        <button onclick="showTab('academy')">Academy</button>
+    </div>
+
+    <div class="lang-switch">
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('ur')">UR</button>
+        <button onclick="setLang('ar')">AR</button>
+    </div>
 </div>
 
-<!-- RUQYA TAB -->
+<!-- RUQYA -->
 <div id="ruqya" class="section active-section">
-
-    <!-- HERO IMAGE -->
-    <div class="hero-image">
+    <div id="ruqyaHero" class="hero">
         <div class="overlay">
-            <h1>Healing Through Quran & Sunnah</h1>
+            <h1 data-en="Healing Through Quran & Sunnah"
+                data-ur="قرآن و سنت کے ذریعے شفا"
+                data-ar="الشفاء بالقرآن والسنة">
+                Healing Through Quran & Sunnah
+            </h1>
         </div>
     </div>
 
     <div class="container">
 
         <div class="card">
-            <p><b>“And when I am ill, it is He who cures me.”</b></p>
-            <p>Authentic Ruqya services based on Qur’an & Sunnah.</p>
+            <p data-en="Authentic Ruqya services based on Qur’an & Sunnah."
+               data-ur="قرآن و سنت پر مبنی مستند رقیہ خدمات"
+               data-ar="خدمات رقية شرعية وفق القرآن والسنة">
+               Authentic Ruqya services based on Qur’an & Sunnah.
+            </p>
         </div>
 
         <div class="card">
             <h3>Treatments</h3>
             <ul>
                 <li>Evil Eye</li>
-                <li>Black Magic (Sihr)</li>
-                <li>Envy & Jealousy</li>
-                <li>Anxiety & Stress</li>
+                <li>Black Magic</li>
+                <li>Envy</li>
+                <li>Anxiety</li>
             </ul>
         </div>
 
-        <div class="card">
-            <h3>Pricing</h3>
-            <p>$30 Diagnostic Session</p>
-            <p>$40 Regular Session</p>
-        </div>
-
-        <div class="card">
-            <h3>Offers 🎁</h3>
-            <p>25% Family Discount</p>
-            <p>20% Academy Members Discount</p>
-        </div>
-
-        <a class="whatsapp-btn" href="https://wa.me/923458556748">Chat on WhatsApp</a>
+        <a class="whatsapp-btn" href="https://wa.me/923458556748">WhatsApp</a>
 
     </div>
-
 </div>
 
-<!-- ACADEMY TAB -->
+<!-- ACADEMY -->
 <div id="academy" class="section">
-    <div class="container">
+    <div id="academyHero" class="hero">
+        <div class="overlay">
+            <h1 data-en="Quran Learning Made Easy"
+                data-ur="قرآن سیکھنا اب آسان"
+                data-ar="تعلم القرآن بسهولة">
+                Quran Learning Made Easy
+            </h1>
+        </div>
+    </div>
 
-        <h1 style="color:gold;">Quran Academy</h1>
+    <div class="container">
 
         <div class="card">
             <h3>Courses</h3>
             <ul>
                 <li>Quran with Tajweed</li>
-                <li>1-on-1 Classes</li>
                 <li>Female Teachers</li>
-                <li>Daily Duas & Adhkar</li>
+                <li>1-on-1 Classes</li>
             </ul>
         </div>
 
         <div class="card">
             <h3>Fees</h3>
-            <p>$35 (Age 4–13)</p>
-            <p>$30 (14+)</p>
+            <p>$35 / $30</p>
         </div>
 
     </div>
 </div>
 
-<footer>
-    © 2026 RuqyaTech®
-</footer>
+<footer>© RuqyaTech</footer>
 
 <script>
+
+/* TAB SWITCH */
 function showTab(tabId) {
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active-section'));
     document.getElementById(tabId).classList.add('active-section');
-
-    document.querySelectorAll('.navbar button').forEach(b => b.classList.remove('active'));
-    event.target.classList.add('active');
 }
+
+/* LANGUAGE SWITCH */
+function setLang(lang) {
+    document.querySelectorAll('[data-en]').forEach(el => {
+        el.innerText = el.getAttribute('data-' + lang);
+    });
+}
+
+/* SCROLL ANIMATION */
+window.addEventListener('scroll', () => {
+    document.querySelectorAll('.card').forEach(card => {
+        let top = card.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            card.classList.add('show');
+        }
+    });
+});
+
 </script>
 
 </body>
