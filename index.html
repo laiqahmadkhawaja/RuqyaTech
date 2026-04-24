@@ -1,172 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RuqyaTech</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RuqyaTech</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-<style>
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #020617;
-    color: white;
-}
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #020617;
+            color: white;
+        }
 
-/* NAVBAR */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 30px;
-    background: black;
-}
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background: black;
+        }
 
-.nav-buttons button,
-.lang-switch button {
-    margin: 5px;
-    padding: 8px 18px;
-    border: none;
-    background: #1e293b;
-    color: white;
-    cursor: pointer;
-    border-radius: 20px;
-    transition: 0.3s;
-}
+        .nav-buttons button,
+        .lang-switch button {
+            margin: 5px;
+            padding: 8px 18px;
+            border: none;
+            background: #1e293b;
+            color: white;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
 
-.nav-buttons button.active {
-    background: gold;
-    color: black;
-}
+        .nav-buttons button.active {
+            background: gold;
+            color: black;
+        }
 
-/* HERO (PATTERN) */
-.hero {
-    height: 70vh;
-    background: url("https://www.transparenttextures.com/patterns/arabesque.png"), 
+        /* HERO (PATTERN) */
+        .hero {
+            height: 70vh;
+            background: url("https://www.transparenttextures.com/patterns/arabesque.png"),
                 linear-gradient(to bottom, #020617, #000);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
 
-.hero h1 {
-    font-size: 3rem;
-    color: gold;
-}
+        .hero h1 {
+            font-size: 3rem;
+            color: gold;
+        }
 
-/* SECTION */
-.section {
-    display: none;
-}
-.active-section {
-    display: block;
-}
+        /* SECTION */
+        .section {
+            display: none;
+        }
 
-/* CONTENT */
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
-}
+        .active-section {
+            display: block;
+        }
 
-.card {
-    background: #111827;
-    padding: 20px;
-    border-radius: 12px;
-    margin: 20px 0;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.6s;
-}
+        /* CONTENT */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
 
-.card.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+        .card {
+            background: #111827;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 0.6s;
+        }
 
-.card h3 {
-    color: gold;
-}
+        .card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-/* POSTER */
-.poster {
-    margin-top: 30px;
-}
+        .card h3 {
+            color: gold;
+        }
 
-.poster img {
-    width: 100%;
-    border-radius: 15px;
-}
+        /* POSTER */
+        .poster {
+            margin-top: 30px;
+        }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: black;
-}
-    /* WHATSAPP FLOAT BUTTON */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    font-size: 26px;
-    padding: 15px 18px;
-    border-radius: 50%;
-    text-decoration: none;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    z-index: 999;
-    transition: 0.3s;
-}
+        .poster img {
+            width: 100%;
+            border-radius: 15px;
+        }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    background: #1ebe5d;
-}
-    /* NAVBAR LAYOUT FIX */
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 30px;
-    background: black;
-    position: relative;
-}
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: black;
+        }
 
-.logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 22px;
-    font-weight: 600;
-    color: gold;
-}
-.tagline {
-    margin-top: 15px;
-    font-size: 16px;
-    color: #d1d5db;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-}
-.hero h1 {
-    font-size: 3rem;
-    color: gold;
-}
+        /* WHATSAPP FLOAT BUTTON */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            font-size: 26px;
+            padding: 15px 18px;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            transition: 0.3s;
+        }
 
-.tagline {
-    font-style: italic;
-}
-</style>
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #1ebe5d;
+        }
+
+        /* NAVBAR LAYOUT FIX */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background: black;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 22px;
+            font-weight: 600;
+            color: gold;
+        }
+
+        .tagline {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #d1d5db;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: gold;
+        }
+
+        .tagline {
+            font-style: italic;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- <div class="navbar">
+    <!-- <div class="navbar">
     <div class="nav-buttons">
         <button class="active" onclick="showTab(event,'ruqya')">Ruqya</button>
         <button onclick="showTab(event,'academy')">Academy</button>
@@ -179,176 +185,262 @@ footer {
     </div>
 </div> -->
     <div class="navbar">
-    
-    <div class="nav-buttons">
-        <button class="active" onclick="showTab(event,'ruqya')">Ruqya</button>
-        <button onclick="showTab(event,'academy')">Academy</button>
-    </div>
 
-    <div class="logo">RuqyaTech</div>
-
-    <div class="lang-switch">
-        <button onclick="setLang('en')">EN</button>
-        <button onclick="setLang('ur')">UR</button>
-        <button onclick="setLang('ar')">AR</button>
-    </div>
-
-</div>
-
-<!-- RUQYA -->
-<div id="ruqya" class="section active-section">
-
-<div class="hero">
-    <div>
-        <h1>Ruqya Services in Islamabad</h1>
-        <p class="tagline">
-            🌙 "And when I am ill, it is He who cures me." (Surah Ash-Shu'ara, 26:80)
-        </p>
-    </div>
-</div>
-
-    <div class="container">
-
-        <div class="card">
-            <p data-en="Authentic Ruqya services based on Qur’an & Sunnah with strict confidentiality."
-               data-ur="قرآن و سنت پر مبنی مستند رقیہ خدمات مکمل رازداری کے ساتھ"
-               data-ar="خدمات رقية شرعية وفق القرآن والسنة مع السرية التامة">
-               Authentic Ruqya services based on Qur’an & Sunnah with strict confidentiality.
-            </p>
+        <div class="nav-buttons">
+            <button class="active" onclick="showTab(event,'ruqya')">Ruqya</button>
+            <button onclick="showTab(event,'academy')">Academy</button>
         </div>
 
-        <div class="card">
-            <h3>Conditions We Treat</h3>
-            <ul>
-                <li>Evil Eye</li>
-                <li>Black Magic (Sihr)</li>
-                <li>Anxiety & Stress</li>
-                <li>Insomnia</li>
-                <li>Chronic Pain</li>
-            </ul>
-        </div>
+        <div class="logo">RuqyaTech</div>
 
-        <div class="card">
-            <h3>Our Approach</h3>
-            <p>We identify root causes and guide complete healing through Islamic methods.</p>
-        </div>
-
-        <div class="card">
-            <h3>Pricing</h3>
-            <p>$30 Diagnostic Session</p>
-            <p>$40 Regular Session</p>
-        </div>
-
-        <!-- WHAT WE OFFER -->
-        <div class="card">
-            <h3>What We Offer</h3>
-            <ul>
-                <li>Online Sessions Worldwide</li>
-                <li>Quran & Sunnah Based Treatment</li>
-                <li>No Shirk Methods</li>
-                <li>Confidential Consultation</li>
-            </ul>
-        </div>
-
-        <!-- POSTER -->
-        <div class="poster">
-            <img src="ruqya-poster.jpg" alt="">
+        <div class="lang-switch">
+            <button onclick="setLang('en')">EN</button>
+            <button onclick="setLang('ur')">UR</button>
+            <button onclick="setLang('ar')">AR</button>
         </div>
 
     </div>
-</div>
 
-<!-- ACADEMY -->
-<div id="academy" class="section">
+    <!-- RUQYA -->
+    <div id="ruqya" class="section active-section">
 
-<div class="hero">
-    <div>
-        <h1>RuqyaTech Quran Academy</h1>
-        <p class="tagline">
-            Empowering Sisters & Children with Quranic Knowledge Worldwide
-        </p>
+        <!-- HERO -->
+        <div class="hero">
+            <div>
+                <h1>Ruqya Services in Islamabad</h1>
+                <p class="tagline">
+                    🌙 "And when I am ill, it is He who cures me." (Surah Ash-Shu'ara, 26:80)
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <!-- INTRO -->
+            <div class="card">
+                <h3>RUQYATECH®</h3>
+                <p><b>Online Ruqya Consultation & Services</b></p>
+                <p>
+                    In today’s fast-paced world, physical health is often prioritized while spiritual well-being is
+                    overlooked—yet both are deeply interconnected.
+                </p>
+                <p>
+                    Convenient online sessions allow you to access our services from the comfort of your home, with no
+                    physical visit required.
+                </p>
+            </div>
+
+            <!-- AUTHENTICITY -->
+            <div class="card">
+                <h3>Authentic & Trusted Method</h3>
+                <ul>
+                    <li>✔ Qur’an & Sunnah–based practices only</li>
+                    <li>✘ No amulets or shirk-based methods</li>
+                    <li>✔ Strict confidentiality</li>
+                </ul>
+            </div>
+
+            <!-- CONDITIONS -->
+            <div class="card">
+                <h3>Conditions We Address</h3>
+                <p>
+                    Evil eye, sihr (black magic), anxiety & stress, eczema and chronic skin conditions, tinnitus, cysts,
+                    pregnancy-related concerns, sciatica, unexplained pain, insomnia, and related issues.
+                </p>
+            </div>
+
+            <!-- APPROACH -->
+            <div class="card">
+                <h3>Our Approach</h3>
+                <p>
+                    Our approach focuses on identifying the root cause of issues, managing their effects, and working
+                    towards complete resolution under supervision of experienced Raqis.
+                </p>
+                <p>
+                    At RuqyaTech®, we also empower individuals with knowledge for self-assessment and initial
+                    self-healing techniques.
+                </p>
+            </div>
+
+            <!-- SERVICES AREA -->
+            <div class="card">
+                <h3>Our Services</h3>
+                <p>
+                    We provide online Ruqya consultations for clients across Europe, the UK, North America, Japan, and
+                    Australia.
+                </p>
+            </div>
+
+            <!-- FEES -->
+            <div class="card">
+                <h3>Fee Structure</h3>
+                <p>• Diagnostic Session (Initial Consultation): USD 30</p>
+                <p>• Regular Online Session: USD 40 per session</p>
+            </div>
+
+            <!-- OFFERS -->
+            <div class="card">
+                <h3>Special Offers 🎁</h3>
+                <p>25% discount for additional family members</p>
+                <p>20% discount for RuqyaTech® Qur’an Academy members</p>
+            </div>
+
+            <!-- NOTE -->
+            <div class="card">
+                <p>
+                    <b>Note:</b> Prior appointment is required for the initial diagnostic session. Appointments can be
+                    scheduled via WhatsApp.
+                </p>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="card">
+                <h3>Contact Us</h3>
+                <p>📲 WhatsApp: +92 345 8556748</p>
+                <p>📲 WhatsApp: +966 541575289</p>
+                <p>🌐 Website: www.ruqyatechinternational.com</p>
+            </div>
+
+            <!-- QUOTE -->
+            <div class="card">
+                <p>
+                    “Ruqya is the recitation of Qur’anic verses and authentic supplications to seek protection and
+                    healing from spiritual and physical harm. It is a practice established and permitted by the Prophet
+                    Muhammad (ﷺ).”
+                </p>
+            </div>
+
+            <!-- WHAT WE OFFER -->
+            <div class="card">
+                <h3>What We Offer</h3>
+                <ul>
+                    <li>Online Sessions Worldwide</li>
+                    <li>Authentic Islamic Healing</li>
+                    <li>Confidential Consultation</li>
+                    <li>Guided Self-Healing Techniques</li>
+                </ul>
+            </div>
+
+            <!-- POSTER -->
+            <div class="poster">
+                <img src="ruqya-poster.jpg" alt="Ruqya Poster">
+            </div>
+
+        </div>
     </div>
-</div>
 
-    <div class="container">
+    <!-- ACADEMY -->
+    <div id="academy" class="section">
 
-        <div class="card">
-            <p data-en="Empowering Sisters & Children with Quranic Knowledge Worldwide"
-               data-ur="دنیا بھر میں بہنوں اور بچوں کو قرآن کی تعلیم دینا"
-               data-ar="تمكين النساء والأطفال من تعلم القرآن عالميًا">
-               Empowering Sisters & Children with Quranic Knowledge Worldwide
-            </p>
+        <!-- HERO -->
+        <div class="hero">
+            <div>
+                <h1>RuqyaTech Quran Academy</h1>
+                <p class="tagline">
+                    Empowering Sisters & Children with Quranic Knowledge Worldwide
+                </p>
+            </div>
         </div>
 
-        <div class="card">
-            <h3>Courses</h3>
-            <ul>
-                <li>Quran with Tajweed</li>
-                <li>Female Teachers</li>
-                <li>1-on-1 Sessions</li>
-                <li>Daily Duas & Adhkar</li>
-            </ul>
-        </div>
+        <div class="container">
 
-        <div class="card">
-            <h3>Fees</h3>
-            <p>$35 (4–13)</p>
-            <p>$30 (14+)</p>
-        </div>
+            <!-- INTRO -->
+            <div class="card">
+                <h3>RUQYATECH® QURAN ACADEMY</h3>
+                <p><b>Enroll Today – Enjoy a 3-Day Free Trial</b></p>
+            </div>
 
-        <!-- WHAT WE OFFER -->
-        <div class="card">
-            <h3>What We Offer</h3>
-            <ul>
-                <li>3-Day Free Trial</li>
-                <li>Flexible Timings</li>
-                <li>Family Discounts</li>
-                <li>Islamic Learning</li>
-            </ul>
-        </div>
+            <!-- WHAT WE OFFER -->
+            <div class="card">
+                <h3>What We Offer</h3>
+                <ul>
+                    <li>Online Quran Classes for Sisters & Children (Age 4+)</li>
+                    <li>Qualified & Experienced Female Teachers</li>
+                    <li>One-on-One Personalized Sessions (Focused Learning)</li>
+                    <li>Flexible Timings – Weekdays & Weekends</li>
+                    <li>Principle of Tajweed - تجویدی قواعد</li>
+                    <li>Complete Quran with proper recitation (Tarteel) - مکمل قرآن ترتیل کے ساتھ</li>
+                    <li>Short Lessons on Islamic Beliefs (عقیدہ), Salat (نماز) & Daily Duas (دعائیں)</li>
+                    <li>Training in Morning & Evening Adhkar (اذکار) for Self-Protection</li>
+                </ul>
+            </div>
 
-        <!-- POSTER -->
-        <div class="poster">
-            <img src="academy-poster.png" alt="">
-        </div>
+            <!-- FEES -->
+            <div class="card">
+                <h3>Monthly Fee Structure 💰</h3>
+                <p>• 4 – 13 Years: $35 USD</p>
+                <p>• 14+ Years: $30 USD</p>
+            </div>
 
+            <!-- OFFERS -->
+            <div class="card">
+                <h3>Special Offers 🎁</h3>
+                <p>20% Discount for Family Members</p>
+                <p>20% Discount when combined with Ruqya Services</p>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="card">
+                <h3>Contact Us</h3>
+                <p>📲 WhatsApp: +92 345 8556748</p>
+                <p>📲 WhatsApp: +966 54 1575289</p>
+                <p>🌐 Website: www.ruqyatechinternational.com</p>
+            </div>
+
+            <!-- WHAT WE OFFER (FINAL CTA SECTION BEFORE POSTER) -->
+            <div class="card">
+                <h3>What We Offer</h3>
+                <ul>
+                    <li>Free Trial Classes</li>
+                    <li>Flexible Learning Schedule</li>
+                    <li>Personal Attention for Each Student</li>
+                    <li>Islamic Environment for Learning</li>
+                </ul>
+            </div>
+
+            <!-- POSTER -->
+            <div class="poster">
+                <img src="academy-poster.png" alt="Academy Poster">
+            </div>
+
+        </div>
     </div>
-</div>
 
-<footer>© RuqyaTech</footer>
+    <footer>© RuqyaTech</footer>
 
-<script>
+    <script>
 
-/* TAB SWITCH */
-function showTab(event, tabId) {
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active-section'));
-    document.getElementById(tabId).classList.add('active-section');
+        /* TAB SWITCH */
+        function showTab(event, tabId) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active-section'));
+            document.getElementById(tabId).classList.add('active-section');
 
-    document.querySelectorAll('.nav-buttons button').forEach(b => b.classList.remove('active'));
-    event.target.classList.add('active');
-}
-
-/* LANGUAGE SWITCH */
-function setLang(lang) {
-    document.querySelectorAll('[data-en]').forEach(el => {
-        el.innerText = el.getAttribute('data-' + lang);
-    });
-}
-
-/* SCROLL ANIMATION */
-window.addEventListener('scroll', () => {
-    document.querySelectorAll('.card').forEach(card => {
-        let top = card.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100){
-            card.classList.add('show');
+            document.querySelectorAll('.nav-buttons button').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
         }
-    });
-});
 
-</script>
-<a href="https://wa.me/923458556748?text=Assalamualaikum%20I%20need%20Ruqya%20consultation" 
-   class="whatsapp-float" target="_blank">
-    💬
-</a>
+        /* LANGUAGE SWITCH */
+        function setLang(lang) {
+            document.querySelectorAll('[data-en]').forEach(el => {
+                el.innerText = el.getAttribute('data-' + lang);
+            });
+        }
+
+        /* SCROLL ANIMATION */
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.card').forEach(card => {
+                let top = card.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) {
+                    card.classList.add('show');
+                }
+            });
+        });
+
+    </script>
+    <a href="https://wa.me/923458556748?text=Assalamualaikum%20I%20need%20Ruqya%20consultation" class="whatsapp-float"
+        target="_blank">
+        💬
+    </a>
 </body>
+
 </html>
