@@ -53,6 +53,12 @@ h1, h2, h3, .logo {
     font-family: 'Amiri', serif;
     direction: rtl;
     font-size: 1.25rem;
+    line-height: 1.8;
+}
+
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4 {
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 /* NAVBAR */
@@ -253,6 +259,30 @@ h1, h2, h3, .logo {
     box-shadow: var(--card-shadow);
 }
 
+[dir="rtl"] .card {
+    text-align: right;
+}
+
+[dir="rtl"] .card p {
+    text-align: right;
+    text-align-last: right;
+    direction: rtl;
+}
+
+[dir="rtl"] .card a, [dir="rtl"] .card .number {
+    direction: ltr;
+    display: inline-block;
+}
+
+[dir="rtl"] .card h3 {
+    align-items: center; /* Keep icon seal centered */
+}
+
+[dir="rtl"] .card ul {
+    text-align: right;
+}
+
+
 .card:hover {
     transform: translateY(-10px);
     border-color: var(--accent);
@@ -277,27 +307,29 @@ h1, h2, h3, .logo {
 }
 
 .card h3 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     color: var(--accent);
     margin-bottom: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
+    width: 100%;
 }
 
 .card h3 span {
-    font-size: 2rem;
+    font-size: 2.2rem;
     background: var(--glass-bg);
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    margin: 0 auto 15px auto; /* Ensure it's centered alone on top */
-    border: 1.5px solid var(--accent);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 10px auto 20px auto; /* Increased top and bottom margin */
+    border: 2px solid var(--accent);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    flex-shrink: 0;
 }
 
 .card h4 {
