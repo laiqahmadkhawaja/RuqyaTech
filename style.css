@@ -281,7 +281,7 @@ h1, h2, h3, h4, .logo {
 }
 
 [dir="rtl"] .card {
-    text-align: right;
+    text-align: center;
 }
 
 [dir="rtl"] .card h3, [dir="rtl"] .card h4 {
@@ -290,7 +290,7 @@ h1, h2, h3, h4, .logo {
 }
 
 [dir="rtl"] .card p, [dir="rtl"] .card ul {
-    text-align: right;
+    text-align: center;
     direction: rtl;
 }
 
