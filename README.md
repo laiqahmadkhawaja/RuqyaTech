@@ -1,67 +1,41 @@
-# RuqyaTech International - Official Website
+# RuqyaTech | Authentic Healing & Quran Academy
 
-RuqyaTech is a premium platform offering **Authentic Ruqya Services** and a dedicated **Quran Academy** for sisters and children worldwide. This repository contains the source code for the official website, built with modern web technologies and a focus on accessibility and multi-language support.
+RuqyaTech is a premium, multi-language web platform offering authentic Ruqya services and a comprehensive Quran Academy. The site is designed with a modern "glassmorphism" aesthetic and features full localization for English, Urdu, and Arabic speakers.
 
-## 🌐 Live Website
-[RuqyaTech International](https://laiqahmadkhawaja.github.io/RuqyaTech)
+## 🌟 Key Features
 
----
+- **Dual-Service Platform**: Integrated tabs for Ruqya Services and Quran Academy.
+- **Multi-Language Support**: Complete dynamic translation system for English, Urdu, and Arabic.
+- **RTL Support**: Automatic Right-to-Left (RTL) layout adjustment for Urdu and Arabic languages.
+- **Dynamic Theme**: Persistent Light and Dark mode toggle with a premium color palette.
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop viewing.
+- **Interactive Navigation**: Sticky navigation bar with glassmorphism effects and active state tracking.
 
-## ✨ Key Features
+## 📚 Quran Academy Highlights
 
-### 🛡️ Authentic Ruqya Services
-- **Quran & Sunnah Based**: All practices are strictly based on Islamic principles.
-- **Global Consultations**: Convenient online sessions for spiritual healing (Evil Eye, Sihr, Anxiety, etc.).
-- **Professional Raqis**: Experienced practitioners providing personalized care.
-
-### 🎓 RuqyaTech Quran Academy
-- **Sisters & Children (4+)**: Specialized programs for young learners and women.
-- **Qualified Female Teachers**: Learning in a comfortable and professional environment.
+- **Empowering Knowledge**: Focused on sisters and children worldwide.
 - **Comprehensive Curriculum**: Tajweed, Tarteel, Islamic Beliefs, Salat, and Daily Adhkar.
-- **Flexible Learning**: One-on-one sessions with flexible weekday and weekend timings.
+- **Flexible Learning**: One-on-One personalized sessions with experienced female teachers.
+- **Affordable Fees**: Competitive monthly rates in Euro (€) with family discounts.
 
-### 🌍 Multi-Language Support
-Full synchronization across three major languages:
-- **English** (LTR)
-- **Urdu** (RTL)
-- **Arabic** (RTL)
+## 🛠️ Technology Stack
 
-### 🌓 Dynamic User Experience
-- **Dark/Light Mode**: Seamless theme switching for user comfort.
-- **Responsive Design**: Optimized for mobile, tablet, and desktop viewing.
-- **Interactive Elements**: Tabbed navigation, language switching, and WhatsApp integration.
+- **HTML5**: Semantic structure with data-attributes for dynamic translations.
+- **Vanilla CSS3**: Custom design system using CSS Variables, Flexbox, and Grid.
+- **JavaScript (ES6+)**: Custom engine for language switching, theme toggling, and tab management.
+- **Google Fonts**: Premium typography including 'Outfit', 'Inter', 'Noto Nastaliq Urdu', and 'Noto Kufi Arabic'.
 
----
+## 📁 Project Structure
 
-## 🛠️ Technical Architecture
+- `index.html`: Main application structure and translation data.
+- `style.css`: Comprehensive design system and responsive rules.
+- `academy-poster.png`: Promotional visual for the Academy section.
+- `ruqya-poster.jpg`: Promotional visual for the Ruqya section.
 
-- **Frontend**: Semantic HTML5, Vanilla CSS3 (Custom Design System).
-- **Logic**: Vanilla JavaScript for theme management, language switching, and tab control.
-- **Localization**: Custom `data-` attribute system for instant client-side translations.
-- **Directionality**: Automated RTL/LTR switching based on the selected language.
+## 🚀 Deployment
 
----
-
-## 💰 Fee Structure
-
-### Ruqya Services (USD)
-- **Diagnostic Session**: $30
-- **Regular Session**: $40
-
-### Quran Academy (Euro)
-- **Ages 4-13**: €35 / month
-- **Ages 14+**: €30 / month
-- **Trial**: 3-Day Free Trial available.
+The site is currently hosted on GitHub Pages:
+[https://laiqahmadkhawaja.github.io/RuqyaTech](https://laiqahmadkhawaja.github.io/RuqyaTech)
 
 ---
-
-## 📲 Contact Information
-
-- **WhatsApp (Global)**: [+92 345 8556748](https://wa.me/923458556748)
-- **WhatsApp (KSA)**: [+966 54 1575289](https://wa.me/966541575289)
-- **Email**: [ruqyatech@outlook.com](mailto:ruqyatech@outlook.com)
-
----
-
-## 📄 License
-© 2026 RuqyaTech International. All rights reserved.
+*© 2026 RuqyaTech International. Authentic Healing in Light of Sunnah.*
