@@ -94,28 +94,51 @@ h1, h2, h3, h4, .logo {
 .nav-buttons button {
     background: transparent;
     color: var(--text-white);
-    border: none;
-    padding: 10px 20px;
+    border: 1px solid var(--accent); /* Yellow border */
+    padding: 10px 25px;
     font-weight: 700;
     cursor: pointer;
     transition: var(--transition);
-    border-radius: 8px;
-    margin: 0 5px;
+    border-radius: 12px;
+    margin: 0 8px;
     font-size: 1rem;
-    opacity: 0.8;
+    opacity: 0.6;
+    position: relative;
+    overflow: hidden;
+    animation: subtlePulse 4s ease-in-out infinite;
+}
+
+@keyframes subtlePulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.03) translateY(-2px); opacity: 0.8; }
 }
 
 .nav-buttons button.active {
     background: var(--accent);
     color: #000 !important;
-    /* Force readable text on gold */
     opacity: 1;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    border-color: var(--accent);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6), 0 0 10px rgba(212, 175, 55, 0.4);
+    animation: tabPulse 2s ease-in-out infinite;
+    transform: scale(1.05);
+}
+
+@keyframes tabPulse {
+    0%, 100% { 
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+    }
+    50% { 
+        transform: scale(1.1) translateY(-3px);
+        box-shadow: 0 0 40px rgba(212, 175, 55, 0.8);
+    }
 }
 
 .nav-buttons button:hover:not(.active) {
     background: var(--glass-bg);
     opacity: 1;
+    border-color: var(--accent);
+    transform: translateY(-2px);
 }
 
 .nav-actions {
